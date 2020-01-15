@@ -6,6 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --collect-coverage --watchAll=true",
     "eject": "react-scripts eject"
   },
   "jest": {
@@ -21,9 +22,9 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
         "statements": 0
       }
     }

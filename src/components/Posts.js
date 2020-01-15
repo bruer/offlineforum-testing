@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import SinglePost from './SinglePost';
-import CreateNewPost from './CreateNewPost';
-import * as api from '../api';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import SinglePost from "./SinglePost";
+import CreateNewPost from "./CreateNewPost";
+import * as api from "../api";
 
 class Posts extends Component {
   state = {
@@ -18,10 +18,10 @@ class Posts extends Component {
     this.setState({ posts });
   };
 
-  removePost = (postId) => {
+  removePost = postId => {
     api.removePost(postId);
     this.setPostFromLocalStorage();
-  }
+  };
 
   renderPostList = posts =>
     posts.map(post => (

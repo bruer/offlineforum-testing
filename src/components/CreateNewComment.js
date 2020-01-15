@@ -28,11 +28,11 @@ class CreateNewComment extends Component {
         onSubmit={this.onSubmit}
         className='container mx-auto flex flex-col p-6'
       >
-        <label htmlFor='comment' className='mb-2'>
+        <label htmlFor={this.props.postId} className='mb-2'>
           Comment
         </label>
         <textarea
-          id='comment'
+          id={this.props.postId}
           value={this.state.comment}
           onChange={this.onChange}
           name='comment'

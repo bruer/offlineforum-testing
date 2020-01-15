@@ -92,7 +92,7 @@ export function fetchCurrentPersona() {
   if (currentPersona) {  
     return JSON.parse(currentPersona);
   }
-  storeCurrentPersona('Zac');
+  // storeCurrentPersona('Zac');
   return 'Zac';
 }
 
