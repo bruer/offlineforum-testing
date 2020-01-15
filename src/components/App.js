@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import Posts from './Posts';
-import PersonaSwitcher from './PersonaSwitcher';
-import Button from './Button';
-import Bot from './Bot/Bot';
-import * as api from '../api';
+import React, { Component } from "react";
+import Posts from "./Posts";
+import PersonaSwitcher from "./PersonaSwitcher";
+import Button from "./Button";
+import Bot from "./Bot/Bot";
+import * as api from "../api";
 
 class App extends Component {
   state = {
-    currentPersona: 'Zac',
-    currentPage: 'home'
+    currentPersona: "",
+    currentPage: "home"
   };
 
   componentDidMount() {
@@ -25,11 +25,18 @@ class App extends Component {
     api.storeCurrentPersona(target.value);
   };
 
+  // changePersona = e => {
+  //   console.log(e.target);
+    
+  //   this.setState({ currentPersona: e.target.value });
+  //   api.storeCurrentPersona(e.target.value);
+  // };
+
   changePage = () => {
-    if (this.state.currentPage === 'home') {
-      this.setState({ currentPage: 'bot' });
+    if (this.state.currentPage === "home") {
+      this.setState({ currentPage: "bot" });
     } else {
-      this.setState({ currentPage: 'home' });
+      this.setState({ currentPage: "home" });
     }
   };
 
@@ -40,15 +47,15 @@ class App extends Component {
           onClick={this.changePage}
           className="absolute pin-l pin-t mt-6 ml-2"
         >
-          {this.state.currentPage === 'home'
-            ? 'Talk to a real human'
-            : 'Return to forum'}
+          {this.state.currentPage === "home"
+            ? "Talk to a real human"
+            : "Return to forum"}
         </Button>
         <PersonaSwitcher
           changePersona={this.changePersona}
           currentPersona={this.state.currentPersona}
         />
-        {this.state.currentPage === 'home' ? (
+        {this.state.currentPage === "home" ? (
           <Posts currentPersona={this.state.currentPersona} />
         ) : (
           <Bot />

@@ -7,7 +7,7 @@ import './style.css';
 
 const postsInLocalStorage = localStorage.getItem('posts');
 if(!postsInLocalStorage){
-  localStorage.setItem('posts', JSON.stringify(fakePosts.data));
+  // localStorage.setItem('posts', JSON.stringify(fakePosts.data));
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
